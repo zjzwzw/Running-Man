@@ -4,7 +4,6 @@
 hero2::hero2()
 {
     //加载资源
-
     rightHero[0].load("://image/1_2.png");
     rightHero[1].load("://image/2_2.png");
     rightHero[2].load("://image/3_2.png");
@@ -30,11 +29,24 @@ hero2::hero2()
     attack.load("://image/attack2.png");
     attackL.load("://image/attack2L.png");
 
-    dash[0].load("://image/dash1.png");
-    dash[1].load("://image/dash2.png");
-    dash[2].load("://image/dash3.png");
-    dash[3].load("://image/dash4.png");
-    dash[4].load("://image/dash5.png");
+    dash[0].load("://image/dash1_.png");
+    dash[1].load("://image/dash2_.png");
+    dash[2].load("://image/dash3_.png");
+    dash[3].load("://image/dash4_.png");
+    dash[4].load("://image/dash5_.png");
+
+    Dazhao[0].load("://image/blue.png");
+    Dazhao[1].load("://image/blue2.png");
+    Dazhao[2].load("://image/blue3.png");
+    Dazhao[3].load("://image/blue4.png");
+    Dazhao[4].load("://image/blue5.png");
+    Dazhao[5].load("://image/blue6.png");
+    Dazhao[6].load("://image/blue7.png");
+    Dazhao[7].load("://image/blue8.png");
+    Dazhao[8].load("://image/blue9.png");
+    Dazhao[9].load("://image/blue10.png");
+    Dazhao[10].load("://image/blue11.png");
+    Dazhao[11].load("://image/blue12.png");
 
 
     //初始化坐标
@@ -49,26 +61,28 @@ hero2::hero2()
     attack_Rect.setWidth(attack.width());
     attack_Rect.setHeight(attack.height());
 
-
     attackL_Rect.setWidth(attackL.width());
     attackL_Rect.setHeight(attackL.height());
-
-
 
     UP_judge =false;
     RIGHT_judge =false;
     LEFT_judge =false;
     DOWN_judge =false;
     L_judge =false;
+    O_judge =false;
     isjump =false;
     status =true;
 
-    //初始化间隔记录变量
-
 }
 
-
-
+void hero2::updatedazhaopic()
+{
+    static int m=0;
+    dazhao=Dazhao[m];
+    m++;
+    if(m>=12)
+        m=0;
+}
 void hero2::updatepic()
 {
     static int m=0;

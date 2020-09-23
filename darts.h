@@ -7,23 +7,24 @@ class darts
 {
 public:
     darts();
-    //更新坐标
-    void updatePosition();
+
+    void updatePosition();//更新坐标
 
 public:
+
     //飞镖资源
     QPixmap mydarts;
     QPixmap dartspic[3];//三个不同状态的飞镖
 
     //位置
-    int m_X;
-    int m_Y;
+    int dart_X;
+    int dart_Y;
 
     //飞镖矩形边框
-    QRect m_Rect;
+    QRect dart_Rect;
 
     //状态
-    bool m_Free;
+    bool dart_Free;
 
     //速度
     int m_Speed;

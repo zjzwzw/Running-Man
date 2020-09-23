@@ -19,15 +19,13 @@ public:
     ~home_page();
 
 
-
-
     map m_map;//地图对象
+
     QTimer m_Timer;//背景定时器
 
     QTimer t;//控件移动定时器
 
     void paintEvent(QPaintEvent *e);
-
     void mousePressEvent(QMouseEvent *e);
 
 private:

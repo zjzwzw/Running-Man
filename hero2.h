@@ -23,6 +23,9 @@ public:
     QPixmap mydash;
     QPixmap dash[5];
 
+    QPixmap dazhao;
+    QPixmap Dazhao[12];
+
 
     //英雄坐标
     int m_X;
@@ -35,21 +38,14 @@ public:
     QRect attack_Rect;
     QRect attackL_Rect;
 
-   void setPosition(int x, int y);
-
+   void updatedazhaopic();//大招图片更新
    void updatepic();//向右更新图片
-
    void updateleftpic();//向左更新图片
-
    void updateuppic();//向上右更新图片
-
    void updatedownpic();//向下右更新图片
-
    void updateuppicL();//向上左更新图片
-
    void updatedownpicL();//向上右更新图片
-
-   void updatedash();
+   void updatedash();//冲刺图片更新
 
    bool isdead;
 
@@ -59,8 +55,10 @@ public:
    bool LEFT_judge;
    bool DOWN_judge;
    bool L_judge;
+   bool O_judge;
    bool isjump;
    bool status;//0上，1下跳跃状态
+
 };
 
 

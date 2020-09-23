@@ -8,13 +8,11 @@ class map
 public:
     map();
 
-    void mapPosition();
+    void mapPosition();//地图一更新
+    void mapPosition_();//地图二更新
+    void mPosition();//地图三更新
 
-    void mapPosition_();
-
-    void mPosition();
-
-    //地图图片对象
+    //地图图片对象，三张地图
     QPixmap m_map1;
     QPixmap m_map2;
 
@@ -34,7 +32,7 @@ public:
     int m1X;
     int m2X;
 
-    //地图滚动幅度
+    //地图滚动速度
     int m_scroll_speed;
 };
 

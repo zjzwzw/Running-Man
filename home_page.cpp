@@ -12,7 +12,7 @@ home_page::home_page(QWidget *parent) :
    ui(new Ui::home_page)
 {
    ui->setupUi(this);
-
+   //开始界面音乐播放
    QSound *m = new QSound("://image/music1.wav");
    m->play();
 
@@ -34,6 +34,7 @@ home_page::home_page(QWidget *parent) :
 
    t.setInterval(GAME_RATE);
    t.start();
+   //标题和按钮的移动
    connect(&t , &QTimer::timeout,[=](){
 
         static int y=-140;
@@ -46,25 +47,16 @@ home_page::home_page(QWidget *parent) :
             t.stop();
    });
 
-
-
-
-
+   //背景更新
    m_Timer.setInterval(GAME_RATE);
-
    m_Timer.start();
-
-
    connect(&m_Timer , &QTimer::timeout,[=](){
-
-
        m_map.mapPosition();
-
        update();
-
    });
 
 
+   //单人模式
    connect(ui->single,&QPushButton::clicked,[=]()
    {
       MainWindow *w=new MainWindow;
@@ -73,6 +65,7 @@ home_page::home_page(QWidget *parent) :
       this->close();
       m->stop();
    });
+   //双人模式
    connect(ui->double_,&QPushButton::clicked,[=]()
    {
       MainWindow *w=new MainWindow;
@@ -81,6 +74,7 @@ home_page::home_page(QWidget *parent) :
       this->close();
       m->stop();
    });
+   //对战模式
    connect(ui->fight,&QPushButton::clicked,[=]()
    {
       fight *w=new fight;
@@ -103,17 +97,14 @@ void home_page::paintEvent(QPaintEvent *e)
     painter.drawPixmap(m_map.m_map1_posX,0,m_map.m_map1);
     painter.drawPixmap(m_map.m_map2_posX,0,m_map.m_map2);
 
-
 }
 
 void home_page::mousePressEvent(QMouseEvent *e)
 {
-
     //加速出现
     if(e->buttons()==Qt::LeftButton)
     {
         t.setInterval(1);
     }
-
 
 }

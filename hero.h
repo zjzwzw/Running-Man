@@ -8,7 +8,6 @@ class hero
 public:
     hero();
 
-
     //英雄资源 对象
     QPixmap myHero;
     QPixmap rightHero[7];
@@ -26,6 +25,9 @@ public:
 
     QPixmap myfire;
     QPixmap fire[4];
+
+    QPixmap dazhao;
+    QPixmap Dazhao[12];
 
 
     //大招火球坐标
@@ -46,20 +48,14 @@ public:
     //火球矩形检测
     QRect fire_Rect;
 
+    void updatedazhaopic();//大招图片更新
     void updatefirepic();//更新火球图片
-
    void updatepic();//向右更新图片
-
    void updateleftpic();//向左更新图片
-
    void updateuppic();//向上右更新图片
-
    void updatedownpic();//向下右更新图片
-
    void updateuppicL();//向上左更新图片
-
    void updatedownpicL();//向上右更新图片
-
    void updatedash();//冲刺护盾图片更新
 
    bool isdead;
@@ -72,6 +68,7 @@ public:
    bool S_judge;
    bool J_judge;
    bool K_judge;
+   bool U_judge;
    bool isjump;//是否跳跃
    bool status;//0上，1下跳跃状态
 };

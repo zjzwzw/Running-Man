@@ -7,6 +7,11 @@
 QT       += core gui
 QT       += multimedia
 
+
+
+RESOURCES += \
+      res.qrc
+
 RC_ICONS = icon.ico
 # 添加图标
 
@@ -39,7 +44,9 @@ SOURCES += \
     darts.cpp \
     fight.cpp \
     hero2.cpp \
-    home_page.cpp
+    home_page.cpp \
+    myice.cpp \
+    myfire.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -49,7 +56,9 @@ HEADERS += \
     darts.h \
     fight.h \
     hero2.h \
-    home_page.h
+    home_page.h \
+    myice.h \
+    myfire.h
 
 FORMS += \
         mainwindow.ui \

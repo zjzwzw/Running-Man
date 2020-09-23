@@ -4,7 +4,6 @@
 hero::hero()
 {
     //添加资源
-
     rightHero[0].load("://image/1.png");
     rightHero[1].load("://image/2.png");
     rightHero[2].load("://image/3.png");
@@ -41,6 +40,20 @@ hero::hero()
     fire[2].load("://image/fire3.png");
     fire[3].load("://image/fire4.png");
 
+
+    Dazhao[0].load("://image/yellow1.png");
+    Dazhao[1].load("://image/yellow2.png");
+    Dazhao[2].load("://image/yellow3.png");
+    Dazhao[3].load("://image/yellow4.png");
+    Dazhao[4].load("://image/yellow5.png");
+    Dazhao[5].load("://image/yellow6.png");
+    Dazhao[6].load("://image/yellow7.png");
+    Dazhao[7].load("://image/yellow8.png");
+    Dazhao[8].load("://image/yellow9.png");
+    Dazhao[9].load("://image/yellow10.png");
+    Dazhao[10].load("://image/yellow11.png");
+    Dazhao[11].load("://image/yellow12.png");
+
     //初始化坐标
     m_X = GAME_WIDTH * 0.1;
     m_Y = GAME_HEIGHT - 150;
@@ -53,15 +66,11 @@ hero::hero()
     attack_Rect.setWidth(attack.width());
     attack_Rect.setHeight(attack.height());
 
-
     attackL_Rect.setWidth(attackL.width());
     attackL_Rect.setHeight(attackL.height());
 
-
     fire_Rect.setWidth(myfire.width());
     fire_Rect.setHeight(myfire.height());
-
-
 
     D_judge =false;
     A_judge =false;
@@ -69,12 +78,19 @@ hero::hero()
     S_judge =false;
     J_judge =false;
     K_judge =false;
+    U_judge =false;
     isjump =false;
     status =true;
 
+}
 
-    //初始化间隔记录变量
-
+void hero::updatedazhaopic()
+{
+    static int m=0;
+    dazhao=Dazhao[m];
+    m++;
+    if(m>=12)
+        m=0;
 }
 
 void hero::updatefirepic()
